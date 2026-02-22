@@ -1,17 +1,17 @@
-package Multithreading;
-
-import java.util.concurrent.Phaser;
+package Abstraction;
 
 public class Program18 {
     public static void main(String[] args) {
-        Phaser phaser = new Phaser(1); // Register self
-        for (int i = 0; i < 2; i++) {
-            phaser.register();
-            new Thread(() -> {
-                System.out.println("Phase 1 complete");
-                phaser.arriveAndAwaitAdvance();
-            }).start();
-        }
-        phaser.arriveAndDeregister();
+        // Using polymorphism to refer to subclass objects via abstract parent
+        Shape rect = new Rectangle();
+        Shape circ = new Circle();
+
+        System.out.println("--- Rectangle Details ---");
+        rect.calculateArea();
+        rect.calculatePerimeter();
+
+        System.out.println("\n--- Circle Details ---");
+        circ.calculateArea();
+        circ.calculatePerimeter();
     }
 }
