@@ -1,0 +1,16 @@
+package Collection;
+import java.util.*;
+
+public class Ex1_ArrayList {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("A");
+        list.add("B");
+        list.add("C");
+
+        list.remove("B");
+
+        for(String s : list)
+            System.out.println(s);
+    }
+}
